@@ -91,7 +91,7 @@ char *QC_GenerateEditionURL(char* format,char* language,char* type)
     type_len = (type == NULL) ? NIL : strlen(type);
 
     /*Append URL with api option.*/
-    strcat(strcpy(edition_url,base_url),api_tokens[API_EDITION]);
+    strcat(strcpy(edition_url,base_url),api_url_tokens[API_EDITION]);
 
     /*Append edition format.*/
     if(format_len != NIL)
@@ -301,7 +301,7 @@ void AppendBaseAPI(char *url,int api_type)
     else
     {
         /*Append URL with api option.*/
-        strcat(strcat(strcpy(url,base_url),api_tokens[api_type]),"/");
+        strcat(strcat(strcpy(url,base_url),api_url_tokens[api_type]),"/");
     }
 }
 
@@ -351,5 +351,12 @@ void ShowCurl(const char *url)
 {
     char curl_cmd[0x64] = "curl ";
     strcat(curl_cmd,url);
+    system(curl_cmd);
+}
+
+void SaveCurl(const char *url,const char* file_name)
+{
+    char curl_cmd[0xC8] = "curl ";
+    strcat(strcat(strcat(curl_cmd,url)," 1> "),file_name);
     system(curl_cmd);
 }

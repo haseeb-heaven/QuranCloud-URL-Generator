@@ -44,6 +44,11 @@ V 1.0 -> Dated : 12/02/2019
 Written by Abdul HaseeB Mir (haseebmir.hm@gmail.com)
 */
 
+/*Defining NULL constants.*/
+#ifndef NIL
+#define NIL 0
+#endif // NIL
+
 /*Base URL for QuranCloud API.*/
 const char *base_url = "http://api.alquran.cloud/v1/";
 
@@ -64,8 +69,9 @@ char *QC_GenerateSajdaURL(char*);
 void AppendBaseAPI(char *,int);
 char *GenerateCommonURL(char *,char*,char* ,char*,int);
 void ShowCurl(const char *);
+void SaveCurl(const char *url,const char*);
 
-enum{NIL,MAX_URL = 0xFF};
-enum API_ENUM {API_EDITION,API_QURAN,API_JUZ,API_SURAH,API_AYAH,API_SEARCH,API_MANZIL,API_RUKU,API_PAGE,API_HIZB,API_SAJDA};
-const char *api_tokens[] = {"edition","quran","juz","surah","ayah","search","manzil","ruku","page","hizbQuarter","sajda"};
+enum{MAX_URL = 0xFF};
+enum API_ENUM_URL {API_EDITION,API_QURAN,API_JUZ,API_SURAH,API_AYAH,API_SEARCH,API_MANZIL,API_RUKU,API_PAGE,API_HIZB,API_SAJDA};
+const char *api_url_tokens[] = {"edition","quran","juz","surah","ayah","search","manzil","ruku","page","hizbQuarter","sajda"};
 #endif /*_QC_URL_GENERATOR_H*/
