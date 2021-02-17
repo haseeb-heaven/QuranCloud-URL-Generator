@@ -58,5 +58,3 @@ Using **QC_GeneratePageURL()** method.</br>
 
 **DOCUMENTATION INFO :**
 All Public methods are well documented but private methods are not documented as it was not necessary to do so.
-
-Written and maintained by Abdul HaseeB Mir (haseebmir.hm@gmail.com)
